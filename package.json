@@ -12,6 +12,9 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
+	"publishConfig": { 
+		"registry": "https://npm.pkg.github.com/" 
+	},
 	"devDependencies": {
 		"@types/enzyme": "^3.10.5",
 		"@types/enzyme-adapter-react-16": "^1.0.6",
