@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "jest",
-		"example": "parcel example/index.html"
+		"example": "parcel example/index.html",
+    "build": "tsc --project tsconfig.json"
 	},
 	"keywords": [],
 	"author": "",
