@@ -1,6 +1,6 @@
 # React Gate Duo
 
-This project was very little based on [react-gate](https://www.npmjs.com/package/react-gate) . Aims to be all but simple. 
+This project was very little based on [react-gate](https://www.npmjs.com/package/react-gate) . Aims to be simple.
 
 ### Install
 
