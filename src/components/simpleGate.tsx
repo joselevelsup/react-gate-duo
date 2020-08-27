@@ -1,8 +1,8 @@
 import * as React from "react";
-import { randomId } from "./utils";
-import { GateProps } from "./types";
+import { randomId } from "../utils";
+import { GateProps } from "../types";
 
-export default ({ localCredentials, authorized, inputClassName, children }: React.PropsWithChildren<GateProps>) => {
+const SimpleGate = ({ localCredentials, authorized, inputClassName, children }: React.PropsWithChildren<GateProps>) => {
 
 	const [ passThroughGate, setGatePass ] = React.useState<boolean>(false);
 	const [ username, setUsername ] = React.useState<string>("");
@@ -62,3 +62,5 @@ export default ({ localCredentials, authorized, inputClassName, children }: Reac
 		)
 	}
 }
+
+export default SimpleGate;
