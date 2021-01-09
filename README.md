@@ -4,7 +4,6 @@ This project was very little based on [react-gate](https://www.npmjs.com/package
 
 ### Install
 
-For Stable 
 ```
 npm install --save react-gate-duo
 ```
