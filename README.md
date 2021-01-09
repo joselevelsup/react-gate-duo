@@ -9,12 +9,6 @@ For Stable
 npm install --save react-gate-duo
 ```
 
-For Development
-
-```
-npm install --save joselevelsup/react-gate-duo#master
-
-```
 
 ### Examples
 ```jsx 
