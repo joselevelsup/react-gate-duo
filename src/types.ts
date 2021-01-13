@@ -1,5 +1,12 @@
 export interface GateProps {
   localCredentials?: { username: string, password: string };
   authorized?: boolean | Function;
-  inputClassName?: string;
+  gateClasses?: {
+    inputClassName?: string, 
+    formClassName?: string, 
+    firstInputClassName?: string, 
+    secondInputClassName?: string, 
+    submitButtonContainerClassName?: string, 
+    submitButtonClassName?: string
+  }
 }

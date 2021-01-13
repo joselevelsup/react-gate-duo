@@ -2,7 +2,7 @@ import * as React from "react";
 import { randomId } from "./utils";
 import { GateProps } from "./types";
 
-export default ({ localCredentials, authorized, inputClassName, children }: React.PropsWithChildren<GateProps>) => {
+export default ({ localCredentials, authorized, gateClasses: { inputClassName = "", formClassName = "", firstInputClassName = "", secondInputClassName = "", submitButtonContainerClassName = "", submitButtonClassName = "" }, children }: React.PropsWithChildren<GateProps>) => {
 
 	const [ passThroughGate, setGatePass ] = React.useState<boolean>(false);
 	const [ username, setUsername ] = React.useState<string>("");
@@ -48,15 +48,15 @@ export default ({ localCredentials, authorized, inputClassName, children }: Reac
 		return <>{children}</>;
 	} else {
 		return (
-			<form onSubmit={loginUser}>
-				<div>
-					<input className={inputClassName ? inputClassName : ""} placeholder="Username" name="username" type="text" value={username} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)} />
+			<form className={formClassName} onSubmit={loginUser}>
+				<div className={firstInputClassName}>
+					<input className={inputClassName} placeholder="Username" name="username" type="text" value={username} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)} />
 				</div>
-				<div>
-					<input className={inputClassName ? inputClassName : ""} placeholder="Password" name="password" type="password" value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}/>
+				<div className={secondInputClassName}>
+					<input className={inputClassName} placeholder="Password" name="password" type="password" value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}/>
 				</div>
-				<div>
-					<button type="submit">Login</button>
+				<div className={submitButtonContainerClassName}>
+					<button className={submitButtonClassName} type="submit">Login</button>
 				</div>
 			</form>
 		)
