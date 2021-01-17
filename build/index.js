@@ -22,10 +22,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var utils_1 = require("./utils");
 exports.default = (function (_a) {
-    var localCredentials = _a.localCredentials, authorized = _a.authorized, inputClassName = _a.inputClassName, children = _a.children;
-    var _b = React.useState(false), passThroughGate = _b[0], setGatePass = _b[1];
-    var _c = React.useState(""), username = _c[0], setUsername = _c[1];
-    var _d = React.useState(""), password = _d[0], setPassword = _d[1];
+    var localCredentials = _a.localCredentials, authorized = _a.authorized, _b = _a.gateClasses, _c = _b.inputClassName, inputClassName = _c === void 0 ? "" : _c, _d = _b.formClassName, formClassName = _d === void 0 ? "" : _d, _e = _b.firstInputClassName, firstInputClassName = _e === void 0 ? "" : _e, _f = _b.secondInputClassName, secondInputClassName = _f === void 0 ? "" : _f, _g = _b.submitButtonContainerClassName, submitButtonContainerClassName = _g === void 0 ? "" : _g, _h = _b.submitButtonClassName, submitButtonClassName = _h === void 0 ? "" : _h, children = _a.children;
+    var _j = React.useState(false), passThroughGate = _j[0], setGatePass = _j[1];
+    var _k = React.useState(""), username = _k[0], setUsername = _k[1];
+    var _l = React.useState(""), password = _l[0], setPassword = _l[1];
     var checkSession = function () {
         if (typeof localStorage == "undefined") {
             return false;
@@ -67,12 +67,12 @@ exports.default = (function (_a) {
         return React.createElement(React.Fragment, null, children);
     }
     else {
-        return (React.createElement("form", { onSubmit: loginUser },
-            React.createElement("div", null,
-                React.createElement("input", { className: inputClassName ? inputClassName : "", placeholder: "Username", name: "username", type: "text", value: username, onChange: function (e) { return setUsername(e.target.value); } })),
-            React.createElement("div", null,
-                React.createElement("input", { className: inputClassName ? inputClassName : "", placeholder: "Password", name: "password", type: "password", value: password, onChange: function (e) { return setPassword(e.target.value); } })),
-            React.createElement("div", null,
-                React.createElement("button", { type: "submit" }, "Login"))));
+        return (React.createElement("form", { className: formClassName, onSubmit: loginUser },
+            React.createElement("div", { className: firstInputClassName },
+                React.createElement("input", { className: inputClassName, placeholder: "Username", name: "username", type: "text", value: username, onChange: function (e) { return setUsername(e.target.value); } })),
+            React.createElement("div", { className: secondInputClassName },
+                React.createElement("input", { className: inputClassName, placeholder: "Password", name: "password", type: "password", value: password, onChange: function (e) { return setPassword(e.target.value); } })),
+            React.createElement("div", { className: submitButtonContainerClassName },
+                React.createElement("button", { className: submitButtonClassName, type: "submit" }, "Login"))));
     }
 });
