@@ -44,5 +44,17 @@ When using ``localCredentials`` prop, when logging in, `SimpleGate` sets a sessi
 |------------------------|-----------------------------------------|-----------------------------------------|---------|
 | localCredentials			 | { username: string, password: string }  | If authorized prop not being used			 | none    |
 | authorized						 | Function that returns a boolean				 | If localCredentials prop not being used | none		 |
-| inputClassName				 | className for inputs										 | No																			 | none		 |
+
+### Styling
+
+Each classname is in the `gateClasses` prop object. There is absolutely NO styling implemented by default so everything is up to you. 
+
+| Gate Class Prop			           |	Type	 | Default |
+|--------------------------------|---------|---------|
+| inputClassName								 | String  | ""			 |
+| formClassName									 | String  | ""			 |
+| firstInputClassName						 | String  | ""			 |
+| secondInputClassName					 | String  | ""      |
+| submitButtonContainerClassName | String  | ""      |
+| submitButtonClassName          | String  | ""      |
 

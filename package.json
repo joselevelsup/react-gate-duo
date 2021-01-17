@@ -13,7 +13,7 @@
 	"author": "",
 	"license": "ISC",
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
+		"registry": "https://registry.npmjs.org/"
 	},
 	"devDependencies": {
 		"@types/enzyme": "^3.10.5",
