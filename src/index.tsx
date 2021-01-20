@@ -2,7 +2,7 @@ import * as React from "react";
 import { randomId } from "./utils";
 import { GateProps } from "./types";
 
-export default ({ localCredentials, authorized, gateClasses: { inputClassName = "", formClassName = "", firstInputClassName = "", secondInputClassName = "", submitButtonContainerClassName = "", submitButtonClassName = "" }, children }: React.PropsWithChildren<GateProps>) => {
+function SimpleGate ({ localCredentials, authorized, gateClasses, children }: React.PropsWithChildren<GateProps>){
 
 	const [ passThroughGate, setGatePass ] = React.useState<boolean>(false);
 	const [ username, setUsername ] = React.useState<string>("");
@@ -44,6 +44,8 @@ export default ({ localCredentials, authorized, gateClasses: { inputClassName = 
 		}
 	}
 
+	const { formClassName, firstInputClassName, secondInputClassName, inputClassName, submitButtonClassName, submitButtonContainerClassName } = gateClasses;
+
 	if(checkSession() || passThroughGate || authorized){
 		return <>{children}</>;
 	} else {
@@ -62,3 +64,17 @@ export default ({ localCredentials, authorized, gateClasses: { inputClassName = 
 		)
 	}
 }
+
+SimpleGate.defaultProps = {
+	gateClasses: {
+		formClassName: "",
+		firstInputClassName: "",
+		secondInputClassName: "",
+		inputClassName: "",
+		submitButtonClassName: "",
+		submitButtonContainerClassName: ""
+	}
+}
+
+export default SimpleGate;
+
