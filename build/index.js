@@ -21,11 +21,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(require("react"));
 var utils_1 = require("./utils");
-exports.default = (function (_a) {
-    var localCredentials = _a.localCredentials, authorized = _a.authorized, _b = _a.gateClasses, _c = _b.inputClassName, inputClassName = _c === void 0 ? "" : _c, _d = _b.formClassName, formClassName = _d === void 0 ? "" : _d, _e = _b.firstInputClassName, firstInputClassName = _e === void 0 ? "" : _e, _f = _b.secondInputClassName, secondInputClassName = _f === void 0 ? "" : _f, _g = _b.submitButtonContainerClassName, submitButtonContainerClassName = _g === void 0 ? "" : _g, _h = _b.submitButtonClassName, submitButtonClassName = _h === void 0 ? "" : _h, children = _a.children;
-    var _j = React.useState(false), passThroughGate = _j[0], setGatePass = _j[1];
-    var _k = React.useState(""), username = _k[0], setUsername = _k[1];
-    var _l = React.useState(""), password = _l[0], setPassword = _l[1];
+function SimpleGate(_a) {
+    var localCredentials = _a.localCredentials, authorized = _a.authorized, gateClasses = _a.gateClasses, children = _a.children;
+    var _b = React.useState(false), passThroughGate = _b[0], setGatePass = _b[1];
+    var _c = React.useState(""), username = _c[0], setUsername = _c[1];
+    var _d = React.useState(""), password = _d[0], setPassword = _d[1];
     var checkSession = function () {
         if (typeof localStorage == "undefined") {
             return false;
@@ -63,6 +63,7 @@ exports.default = (function (_a) {
             }
         }
     };
+    var formClassName = gateClasses.formClassName, firstInputClassName = gateClasses.firstInputClassName, secondInputClassName = gateClasses.secondInputClassName, inputClassName = gateClasses.inputClassName, submitButtonClassName = gateClasses.submitButtonClassName, submitButtonContainerClassName = gateClasses.submitButtonContainerClassName;
     if (checkSession() || passThroughGate || authorized) {
         return React.createElement(React.Fragment, null, children);
     }
@@ -75,4 +76,15 @@ exports.default = (function (_a) {
             React.createElement("div", { className: submitButtonContainerClassName },
                 React.createElement("button", { className: submitButtonClassName, type: "submit" }, "Login"))));
     }
-});
+}
+SimpleGate.defaultProps = {
+    gateClasses: {
+        formClassName: "",
+        firstInputClassName: "",
+        secondInputClassName: "",
+        inputClassName: "",
+        submitButtonClassName: "",
+        submitButtonContainerClassName: ""
+    }
+};
+exports.default = SimpleGate;
